@@ -1,4 +1,3 @@
-from VHbbAnalysis.Heppy.vhbbobj import Jet_blikeVBF
 from PhysicsTools.HeppyCore.utils.deltar import deltaPhi
 
 from math import *
@@ -30,10 +29,10 @@ class VBFblikelihood :
     nJet=len(events.jets)#I havent found nJet variable, should I do like this?
     for index,j in enumerate(event.jets,start=0) :
       j.blike_VBF=-2
-      if j.btagCSV()>1 : 
-        j.btagCSV()=1
-      if j.btagCSV()<0 :
-        j.btagCSV()=0
+      if j.btagCSV>1 : 
+        j.btagCSV=1
+      if j.btagCSV<0 :
+        j.btagCSV=0
     if ((event.jets[0].pt()>92.) and (event.jets[1].pt()>76.) and (event.jets[2].pt()>64) and (event.jets[3].pt()>30)):
       if (nJet>=4):
         jetsForHiggs4=[]
