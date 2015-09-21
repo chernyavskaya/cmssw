@@ -57,9 +57,9 @@ class VHbbAnalyzer( Analyzer ):
             regression = JetRegression(re["weight"],re["name"])              
             for i in re["vtypes"] :
                 self.regressions[i] = regression
-		blike=self.cfg_ana.VBFblikelihood
-		print "Initialize VBF blikelihood ", blike
-		self.blikelihood = VBFblikelihood(blike["weight"],blike["name"])
+        blike=self.cfg_ana.VBFblikelihood
+        print "Initialize VBF blikelihood ", blike
+        self.blikelihood = VBFblikelihood(blike["weight"],blike["name"])
 
 
     def doVBF(self,event) :
@@ -78,8 +78,8 @@ class VHbbAnalyzer( Analyzer ):
         j2=event.bJetsForVBF[1]
 #print "VBF"
 #print event.selectedElectrons,event.selectedMuons,
-		event.softActivityJets=self.softActivity(event,j1,j2,event.jetsForVBF+event.selectedElectrons+event.selectedMuons)
-		self.blikelihood.evaluateBlikelihood(event)
+        event.softActivityJets=self.softActivity(event,j1,j2,event.jetsForVBF+event.selectedElectrons+event.selectedMuons)
+        self.blikelihood.evaluateBlikelihood(event)
 
     def doSoftActivityVH(self,event) :
         j1=event.hJetsCSV[0]
