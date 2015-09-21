@@ -30,8 +30,10 @@ class VBFblikelihood :
     nJet=len(events.jets)#I havent found nJet variable, should I do like this?
     for index,j in enumerate(event.jets,start=0) :
       j.blike_VBF=-2
-      if j.btagCSV()>1 : j.btagCSV()=1
-      if j.btagCSV()<0 : j.btagCSV()=0
+      if j.btagCSV()>1 : 
+        j.btagCSV()=1
+      if j.btagCSV()<0 :
+        j.btagCSV()=0
     if ((event.jets[0].pt()>92.) and (event.jets[1].pt()>76.) and (event.jets[2].pt()>64) and (event.jets[3].pt()>30)):
       if (nJet>=4):
         jetsForHiggs4=[]
@@ -47,8 +49,8 @@ class VBFblikelihood :
           for i in range(len(other3jets)):
             for j in range(i + 1, len(other3jets)):
               d = abs(other3jets[i].eta() - other3jets[j].eta())
-                if d > maxDeltaEta:
-                  maxEta1, maxEta2, maxDeltaEta = i, j, d
+              if d > maxDeltaEta:
+                maxEta1, maxEta2, maxDeltaEta = i, j, d
           if (maxEta1>=0) and (maxEta2>=0) :
             qjets=[]
             qjets.append(other3jets[maxEta1])
