@@ -74,7 +74,7 @@ class QGLikelihoodCalculator:
         rhoBin  = int(rhoStr.split("rho")[1])
         histogram = hist.ReadObj()
         histogram.SetDirectory(0)
-        self.pdfs[qgType][varName][etaBin][ptBin][rhoBin] = histogram
+        if varName in ["axis2","ptD","mult"]: self.pdfs[qgType][varName][etaBin][ptBin][rhoBin] = histogram
 
     print "[QGLikelihoodCalculator]: pdfs initialized..."
 
@@ -107,6 +107,9 @@ class QGLikelihoodCalculator:
     rhoBin = getBinNumber( self.rhoBins, rho )
     if rhoBin==-1 : return None
 
+    print eta,pt,rho, qgType, varName
+    print etaBin, ptBin, rhoBin
+    print self.pdfs[qgType][varName][etaBin][ptBin][rhoBin]
     return self.pdfs[qgType][varName][etaBin][ptBin][rhoBin]
 
 
