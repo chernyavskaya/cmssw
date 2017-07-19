@@ -2,8 +2,8 @@ from WMCore.Configuration import Configuration
 config = Configuration()
 
 config.section_("General")
-config.General.requestName = 'VHBB_V25_002'
-config.General.workArea = '/scratch/arizzi/crab_sub/crab_projects_V25_002'
+config.General.requestName = 'VHBB_V25_passAll_VBFHbb125_try3'
+config.General.workArea = 'crab_projects'
 config.General.transferLogs=True
 
 config.section_("JobType")
@@ -44,15 +44,26 @@ config.JobType.inputFiles = ['heppy_config.py',
 #config.JobType.outputFiles = ['tree.root']
 
 config.section_("Data")
-config.Data.inputDataset = '/ZH_HToBB_ZToLL_M125_13TeV_amcatnloFXFX_madspin_pythia8/RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/MINIAODSIM'
+config.Data.inputDataset = '/VBFHToBB_M-125_13TeV_powheg_pythia8_weightfix/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/ttHTobb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v2/MINIAODSIM'
+#config.Data.inputDataset = '/DYToLL_1J_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
+#config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_UpPS/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+#config.Data.inputDataset = '/DYToLL_2J_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
+#config.Data.inputDataset = '/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
+#config.Data.inputDataset ='/tZq_ll_4f_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM' 
 config.Data.inputDBS = 'global'
-#config.Data.splitting = 'FileBased'
 config.Data.splitting = 'EventAwareLumiBased'
-config.Data.unitsPerJob = 50000
-#config.Data.totalUnits = 8000
+#config.Data.splitting = 'EventAwareLumiBased'
+config.Data.unitsPerJob = 25000
+config.Data.totalUnits = 200000
 config.Data.allowNonValidInputDataset = True # to run on datasets in PRODUCTION
-config.Data.outLFNDirBase = '/store/group/phys_higgs/hbb/ntuples/V25/'
-config.Data.publication = True
+config.Data.outLFNDirBase = '/store/group/phys_higgs/vbfHbb/V25_passall/'
+config.Data.publication = False
 config.Data.outputDatasetTag = 'VHBB_HEPPY_V25'
 
 config.section_("Site")
