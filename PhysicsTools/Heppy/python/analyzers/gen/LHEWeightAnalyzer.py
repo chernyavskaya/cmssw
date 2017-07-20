@@ -54,10 +54,14 @@ class LHEWeightAnalyzer( Analyzer ):
 
                     newweight = WeightsInfo()
                     newweight.wgt = w.wgt
+                  #  print 'w.id = ', w.id
                     if w.id.startswith('mg_reweight'):
                         newid = str(10000 + int(w.id.rsplit('_',1)[1]))
                         newweight.id = newid
-
+                    elif w.id.startswith('cwww_'):
+                        newid = str(333)
+                        newweight.id = newid
+                    #    print 'newweight.id = ', newweight.id
                     else: raise RuntimeError('Unknown string id in LHE weights')
                     event.LHE_weights.append(newweight)
 

@@ -175,6 +175,7 @@ class GeneratorAnalyzer( Analyzer ):
 
         LHE_weights_scale = []
         LHE_weights_pdf = []
+        LHE_weights_aTGC = []
 
         # https://twiki.cern.ch/twiki/bin/viewauth/CMS/LHEReaderCMSSW)
         for w in event.LHE_weights:
@@ -189,6 +190,10 @@ class GeneratorAnalyzer( Analyzer ):
                     #print int(w.id), ": ", w.wgt, " (pos ", w.order, ")"
                     LHE_weights_scale.append(w)
             # thse are up/down variations for the NNPDF: https://twiki.cern.ch/twiki/bin/view/CMS/TTbarHbbRun2ReferenceAnalysisLimits
+            if (wid==333):
+                print  'aTGC weight = ', w.wgt
+                LHE_weights_aTGC.append(w)
+
             if wid in LHE_pdf_ids:
                 #print  w.wgt
                 w.wgt = w.wgt/event.LHE_originalWeight if abs(event.LHE_originalWeight)>0 else w.wgt
@@ -196,6 +201,7 @@ class GeneratorAnalyzer( Analyzer ):
 
         event.LHE_weights_scale = sorted(LHE_weights_scale, key=lambda w : w.order)
         event.LHE_weights_pdf = LHE_weights_pdf
+        event.LHE_weights_aTGC = LHE_weights_aTGC
 
 #       event.genParticles = map( GenParticle, self.mchandles['genParticles'].product() )
         event.genParticles = list(self.mchandles['genParticles'].product() )
