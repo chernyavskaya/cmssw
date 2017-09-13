@@ -176,11 +176,14 @@ class GeneratorAnalyzer( Analyzer ):
         LHE_weights_scale = []
         LHE_weights_pdf = []
         LHE_weights_aTGC = []
+        LHE_weights_aTGC_nom = []
 
         # https://twiki.cern.ch/twiki/bin/viewauth/CMS/LHEReaderCMSSW)
         for w in event.LHE_weights:
             wid = int(w.id)
             #print wid, ": ", w.wgt
+            if (wid==1):
+                LHE_weights_aTGC_nom.append(w)
             # for LO samples, the scale weights are 1,...,9; for NLO 1001,1009
             if (wid in range(1,10)) or (wid in range(1001,1010)):
                 wid = wid%1000
@@ -190,8 +193,8 @@ class GeneratorAnalyzer( Analyzer ):
                     #print int(w.id), ": ", w.wgt, " (pos ", w.order, ")"
                     LHE_weights_scale.append(w)
             # thse are up/down variations for the NNPDF: https://twiki.cern.ch/twiki/bin/view/CMS/TTbarHbbRun2ReferenceAnalysisLimits
-            if (wid==333):
-                print  'aTGC weight = ', w.wgt
+            if (wid==888):
+              #  print  'aTGC weight = ', w.wgt
                 LHE_weights_aTGC.append(w)
 
             if wid in LHE_pdf_ids:
@@ -202,6 +205,7 @@ class GeneratorAnalyzer( Analyzer ):
         event.LHE_weights_scale = sorted(LHE_weights_scale, key=lambda w : w.order)
         event.LHE_weights_pdf = LHE_weights_pdf
         event.LHE_weights_aTGC = LHE_weights_aTGC
+        event.LHE_weights_aTGC_nom = LHE_weights_aTGC_nom
 
 #       event.genParticles = map( GenParticle, self.mchandles['genParticles'].product() )
         event.genParticles = list(self.mchandles['genParticles'].product() )

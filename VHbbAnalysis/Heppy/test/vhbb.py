@@ -176,6 +176,7 @@ treeProducer= cfg.Analyzer(
 		"LHE_weights_scale"       : NTupleCollection("LHE_weights_scale",   weightsInfoType , 6 ,help="LHE weights for scale variation", mcOnly=True),        
 		"LHE_weights_pdf"       : NTupleCollection("LHE_weights_pdf",   weightsInfoType , 103 ,help="LHE weights for pdf variation (NNPDF)", mcOnly=True),        
 		"LHE_weights_aTGC"       : NTupleCollection("LHE_weights_aTGC",   weightsInfoType , 125 ,help="Weights for aTGC samples, 125", mcOnly=True),        
+		"LHE_weights_aTGC_nom"       : NTupleCollection("LHE_weights_aTGC_nom",   weightsInfoType , 1 ,help="Weight for aTGC nominal point cwww_15_cw_50_cb_500", mcOnly=True),        
                 "HTXSRivetProducer_cat0"       : NTupleCollection("HTXSRivetProducer_cat0",   objectInt , 1 ,help="HTXSRivetProducer event category step 0", mcOnly=True),
                 "HTXSRivetProducer_cat1"       : NTupleCollection("HTXSRivetProducer_cat1",   objectInt , 1 ,help="HTXSRivetProducer event category step 1", mcOnly=True),
                 "l1Jets"       : NTupleCollection("l1Jets",   l1CandidateType , 20 ,help="Stage-2 L1 trigger jets", mcOnly=False),
