@@ -2,7 +2,7 @@ from WMCore.Configuration import Configuration
 config = Configuration()
 
 config.section_("General")
-config.General.requestName = 'EWK_LLJJ_aTGC_new'
+config.General.requestName = 'TTbar'
 config.General.workArea = 'crab_projects'
 config.General.transferLogs=True
 
@@ -38,22 +38,23 @@ config.JobType.inputFiles = ['heppy_config.py',
                               #"../ttbar-fall15_TargetGenOverPt_GenPtCut0.weights.xml",
 			      #'../ttbar-spring16-80X.weights.xml',
 #			      '../ttbar-pumoriond17--500k-13d-300t.weights.xml',
-                              '../ttbar-G25-500k-13d-300t.weights.xml',	
+                 #             '../ttbar-G25-500k-13d-300t.weights.xml',	
+                              '../gravall-v25.weights.xml',	
 			      '../TMVA_blikelihood_vbf_cmssw76_h21trained.weights.xml'
 ]
 #config.JobType.outputFiles = ['tree.root']
 
 config.section_("Data")
-config.Data.inputDataset = '/ZJJToLLJJ_aTGC_MLL-50_TuneCUETP8M1_13TeV-madgraph-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/MINIAODSIM'
+config.Data.inputDataset = '/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 config.Data.inputDBS = 'global'
 #config.Data.splitting = 'FileBased'
 config.Data.splitting = 'EventAwareLumiBased'
-config.Data.unitsPerJob = 25000
-config.Data.totalUnits = 500000
+config.Data.unitsPerJob = 30000
+config.Data.totalUnits = 15000000
 config.Data.allowNonValidInputDataset = True # to run on datasets in PRODUCTION
 config.Data.outLFNDirBase = '/store/group/phys_higgs/vbfHbb/V25/'
 config.Data.publication = False
-config.Data.outputDatasetTag = 'VHBB_HEPPY_V25_new'
+config.Data.outputDatasetTag = 'VHBB_HEPPY_V25_newReg_energyRing'
 
 config.section_("Site")
 config.Site.storageSite = "T2_CH_CERN"

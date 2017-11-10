@@ -175,8 +175,8 @@ treeProducer= cfg.Analyzer(
 		"pileUpVertex_ptHat"   : NTupleCollection("pileUpVertex_ptHat",    objectFloat, 5,help="z position of hardest pile-up collisions",mcOnly=True),        
 		"LHE_weights_scale"       : NTupleCollection("LHE_weights_scale",   weightsInfoType , 6 ,help="LHE weights for scale variation", mcOnly=True),        
 		"LHE_weights_pdf"       : NTupleCollection("LHE_weights_pdf",   weightsInfoType , 103 ,help="LHE weights for pdf variation (NNPDF)", mcOnly=True),        
-		"LHE_weights_aTGC"       : NTupleCollection("LHE_weights_aTGC",   weightsInfoType , 125 ,help="Weights for aTGC samples, 125", mcOnly=True),        
-		"LHE_weights_aTGC_nom"       : NTupleCollection("LHE_weights_aTGC_nom",   weightsInfoType , 1 ,help="Weight for aTGC nominal point cwww_15_cw_50_cb_500", mcOnly=True),        
+#		"LHE_weights_aTGC"       : NTupleCollection("LHE_weights_aTGC",   weightsInfoType , 125 ,help="Weights for aTGC samples, 125", mcOnly=True),        
+#		"LHE_weights_aTGC_nom"       : NTupleCollection("LHE_weights_aTGC_nom",   weightsInfoType , 1 ,help="Weight for aTGC nominal point cwww_15_cw_50_cb_500", mcOnly=True),        
                 "HTXSRivetProducer_cat0"       : NTupleCollection("HTXSRivetProducer_cat0",   objectInt , 1 ,help="HTXSRivetProducer event category step 0", mcOnly=True),
                 "HTXSRivetProducer_cat1"       : NTupleCollection("HTXSRivetProducer_cat1",   objectInt , 1 ,help="HTXSRivetProducer event category step 1", mcOnly=True),
                 "l1Jets"       : NTupleCollection("l1Jets",   l1CandidateType , 20 ,help="Stage-2 L1 trigger jets", mcOnly=False),
@@ -470,11 +470,17 @@ VHbb = cfg.Analyzer(
     doZllKinematicFit=True,
     doSoftActivityEWK=True,
     doVBF=True,
+  #  doSoftActivityVH=False,
+  #  doZllKinematicFit=False,
+  #  doSoftActivityEWK=False,
+  #  doVBF=False,
     regressions = [
-        {"weight":"ttbar-G25-500k-13d-300t.weights.xml", "name":"jet0Regression", "vtypes":[0,1,2,3,4,5,-1]},
+   #     {"weight":"ttbar-G25-500k-13d-300t.weights.xml", "name":"jet0Regression", "vtypes":[0,1,2,3,4,5,-1]},
+        {"weight":"gravall-v25.weights.xml", "name":"jet0Regression", "vtypes":[0,1,2,3,4,5,-1]},
     ],
     regressionVBF = [
-        {"weight":"ttbar-G25-500k-13d-300t.weights.xml", "name":"jet0Regression_vbf", "vtypes":[0,1,2,3,4,5,-1]}
+    #    {"weight":"ttbar-G25-500k-13d-300t.weights.xml", "name":"jet0Regression_vbf", "vtypes":[0,1,2,3,4,5,-1]}
+        {"weight":"gravall-v25.weights.xml", "name":"jet0Regression_vbf", "vtypes":[0,1,2,3,4,5,-1]}
     ],
     VBFblikelihood = {"weight":"TMVA_blikelihood_vbf_cmssw76_h21trained.weights.xml", "name":"BDGT"}
 )
@@ -611,12 +617,12 @@ sample = cfg.MCComponent(
 	#	"root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/7C89D7C0-B7D0-E611-AB35-0CC47A4C8EE8.root",
 		# "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/D466A5FE-11CC-E611-AA18-842B2B17E3BA.root",
 		# "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
-#		 "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
-		 "root://cms-xrd-global.cern.ch//store/mc/RunIISummer16MiniAODv2/ZJJToLLJJ_aTGC_MLL-50_TuneCUETP8M1_13TeV-madgraph-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/00000/6CB5E7AB-454E-E711-8494-0025904C4E28.root",
+		 "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
+#		 "root://cms-xrd-global.cern.ch//store/mc/RunIISummer16MiniAODv2/ZJJToLLJJ_aTGC_MLL-50_TuneCUETP8M1_13TeV-madgraph-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/00000/6CB5E7AB-454E-E711-8494-0025904C4E28.root",
     ],
     # files = ["cmsswPreProcessing.root"],
    # name="ZHLL125", isEmbed=False,
-    name="EWK_LLJJ_aTGC", isEmbed=False,
+    name="Hbb_regression", isEmbed=False,
     puFileMC="puMC.root",
     puFileData="puData.root", 
     puFileDataPlus="puDataPlus.root", 
@@ -643,7 +649,7 @@ class TestFilter(logging.Filter):
 # and the following runs the process directly 
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 10)
+    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 1000)
 
     import time
     import cProfile

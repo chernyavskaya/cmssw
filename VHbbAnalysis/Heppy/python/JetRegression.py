@@ -89,6 +89,7 @@ class JetRegression :
             #self.Jet_chEmEF[0] = min(1,0, j.chargedEmEnergyFraction())
             #self.Jet_chHEF[0] = min(1.-, j.chargedHadronEnergyFraction())
             self.Jet_neHEF[0] = min(1.0,j.neutralHadronEnergyFraction())
+        #    print min(1.0,j.neutralHadronEnergyFraction()), min(1.0,j.neutralHadronEnergy()/(j.p4()*j.rawFactor()).energy()) 
            # self.Jet_totHEF[0] = min(1.0, j.chargedHadronEnergyFraction() + j.neutralHadronEnergyFraction())    
             self.Jet_neEmEF[0] = min(1.0,j.neutralEmEnergyFraction())
             #self.Jet_chMult[0] = j.chargedMultiplicity()

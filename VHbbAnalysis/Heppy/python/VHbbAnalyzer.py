@@ -65,8 +65,8 @@ class VHbbAnalyzer( Analyzer ):
             #for LHE_scale in range(6):
             setattr(self, "inputCounterWeightedLHEWeightScale", ROOT.TH1F("CountWeightedLHEWeightScale","Count with gen weight x LHE_weights_scale and pu weight",6,-0.5,5.5))
             setattr(self, "inputCounterWeightedLHEWeightPdf", ROOT.TH1F("CountWeightedLHEWeightPdf","Count with gen weight x LHE_weights_pdf and pu weight",103,-0.5,102.5))
-            setattr(self, "inputCounterWeightedLHEWeightaTGC", ROOT.TH1F("CountWeightedLHEWeightaTGC","Count with gen weight x LHE_weights_aTGC and pu weight",125,-0.5,124.5))
-            setattr(self, "inputCounterWeightedLHEWeightaTGC_nom", ROOT.TH1F("CountWeightedLHEWeightaTGC_nom","Count with gen weight x LHE_weights_aTGC_nom only! and pu weight ",1,0,2))
+    #        setattr(self, "inputCounterWeightedLHEWeightaTGC", ROOT.TH1F("CountWeightedLHEWeightaTGC","Count with gen weight x LHE_weights_aTGC and pu weight",125,-0.5,124.5))
+     #       setattr(self, "inputCounterWeightedLHEWeightaTGC_nom", ROOT.TH1F("CountWeightedLHEWeightaTGC_nom","Count with gen weight x LHE_weights_aTGC_nom only! and pu weight ",1,0,2))
             #for LHE_pdf in range(2):
             #   setattr(self, "inputCounterWeightedLHEWeightPdf_"+str(LHE_pdf), ROOT.TH1F("CountWeightedLHEWeightPdf_"+str(LHE_pdf),"Count with gen weight x LHE_weights_pdf["+str(LHE_pdf)+"] and pu weight",1,0,2))
 
@@ -552,10 +552,10 @@ class VHbbAnalyzer( Analyzer ):
                getattr(self, "inputCounterWeightedLHEWeightScale").Fill(LHE_scale,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_scale[LHE_scale]).wgt) 
             for LHE_pdf in range(len(event.LHE_weights_pdf)): 
                getattr(self, "inputCounterWeightedLHEWeightPdf").Fill(LHE_pdf,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_pdf[LHE_pdf]).wgt) 
-            for LHE_aTGC in range(len(event.LHE_weights_aTGC)): 
-               getattr(self, "inputCounterWeightedLHEWeightaTGC").Fill(LHE_aTGC,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_aTGC[LHE_aTGC]).wgt) 
-            for LHE_aTGC_nom in range(len(event.LHE_weights_aTGC_nom)): 
-               getattr(self, "inputCounterWeightedLHEWeightaTGC_nom").Fill(LHE_aTGC_nom,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_aTGC_nom[LHE_aTGC_nom]).wgt) 
+       #     for LHE_aTGC in range(len(event.LHE_weights_aTGC)): 
+        #       getattr(self, "inputCounterWeightedLHEWeightaTGC").Fill(LHE_aTGC,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_aTGC[LHE_aTGC]).wgt) 
+         #   for LHE_aTGC_nom in range(len(event.LHE_weights_aTGC_nom)): 
+          #     getattr(self, "inputCounterWeightedLHEWeightaTGC_nom").Fill(LHE_aTGC_nom,copysign(1.0, genWeight)*event.puWeight*(event.LHE_weights_aTGC_nom[LHE_aTGC_nom]).wgt) 
             if genWeight > 0:
                 self.inputCounterPosWeight.Fill(1)
             elif genWeight < 0:

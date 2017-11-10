@@ -1,5 +1,6 @@
 from PhysicsTools.Heppy.physicsobjects.PhysicsObject import *
 from PhysicsTools.HeppyCore.utils.deltar import deltaPhi
+from PhysicsTools.HeppyCore.utils.deltar import deltaR
 from PhysicsTools.Heppy.physicsutils.PuJetIDWP import PuJetIDWP
 import math
 
@@ -221,7 +222,43 @@ class Jet(PhysicsObject):
         if lt :
              return lt.pt()
         else :
-             return 0. 
+             return 0.
+
+    def jetEnergyRing(self,dRmin,dRmax):
+       jet = self
+       emEnergy = 0.
+       chargedEnergy = 0.
+       neutralEnergy = 0.
+       muonEnergy = 0.
+       energyPartsRing = [0,0,0,0] #em,muon,charged, neutral
+       for ii in range(0, jet.numberOfDaughters()) :
+         daughter = jet.daughter(ii)
+      #   if daughter.pt < 0.3 : return energyPartsRing 
+         pdgid = abs(daughter.pdgId())
+         dR = deltaR(daughter.eta(),daughter.phi(),jet.p4().eta(),jet.p4().phi())
+         if (dR < dRmax) and (dR >= dRmin):
+           if pdgid == 22 or pdgid==11 : emEnergy=emEnergy+daughter.energy()      
+           elif pdgid == 13 : muonEnergy=muonEnergy+daughter.energy()      
+           elif daughter.charge()!=0 : chargedEnergy=chargedEnergy+daughter.energy()      
+           elif daughter.charge()==0 : neutralEnergy=neutralEnergy+daughter.energy()      
+       energyPartsRing[0] = emEnergy
+       energyPartsRing[1] = muonEnergy 
+       energyPartsRing[2] = chargedEnergy 
+       energyPartsRing[3] = neutralEnergy 
+
+       return energyPartsRing
+
+    def jetDaughtersNum_pt03(self):
+       jet = self
+       mult = 0.
+       for ii in range(0, jet.numberOfDaughters()) :
+         part = jet.daughter(ii)
+         if part.pt()>0.3 : mult +=1
+       return mult 
+
+
+
+
     def qgl(self) :
        if not hasattr(self,"qgl_value") :
 	  if hasattr(self,"qgl_rho") : #check if qgl calculator is configured
