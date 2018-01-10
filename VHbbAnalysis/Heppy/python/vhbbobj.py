@@ -172,26 +172,31 @@ jetTypeVHbb = NTupleObjectType("jet",  baseObjectTypes = [ jetType ], variables 
     NTupleVariable("energyRing_dR2_em", lambda x : (x.jetEnergyRing(0.1,0.2))[0] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, em energy only"), 
     NTupleVariable("energyRing_dR3_em", lambda x : (x.jetEnergyRing(0.2,0.3))[0] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, em energy only"), 
     NTupleVariable("energyRing_dR4_em", lambda x : (x.jetEnergyRing(0.3,0.4))[0] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, em energy only"),
+    NTupleVariable("energyRing_dR5_em", lambda x : (x.jetEnergyRing(0.4,10))[0] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, em energy only"),
 
     NTupleVariable("energyRing_dR0_mu", lambda x : (x.jetEnergyRing(0,0.05))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"), 
     NTupleVariable("energyRing_dR1_mu", lambda x : (x.jetEnergyRing(0.05,0.1))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"), 
     NTupleVariable("energyRing_dR2_mu", lambda x : (x.jetEnergyRing(0.1,0.2))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"), 
     NTupleVariable("energyRing_dR3_mu", lambda x : (x.jetEnergyRing(0.2,0.3))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"), 
     NTupleVariable("energyRing_dR4_mu", lambda x : (x.jetEnergyRing(0.3,0.4))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"),
+    NTupleVariable("energyRing_dR5_mu", lambda x : (x.jetEnergyRing(0.4,10))[1] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, muon energy only"),
     
     NTupleVariable("energyRing_dR0_ch", lambda x : (x.jetEnergyRing(0,0.05))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"), 
     NTupleVariable("energyRing_dR1_ch", lambda x : (x.jetEnergyRing(0.05,0.1))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"), 
     NTupleVariable("energyRing_dR2_ch", lambda x : (x.jetEnergyRing(0.1,0.2))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"), 
     NTupleVariable("energyRing_dR3_ch", lambda x : (x.jetEnergyRing(0.2,0.3))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"), 
     NTupleVariable("energyRing_dR4_ch", lambda x : (x.jetEnergyRing(0.3,0.4))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"),
+    NTupleVariable("energyRing_dR5_ch", lambda x : (x.jetEnergyRing(0.4,10))[2] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, charged energy only"),
     
     NTupleVariable("energyRing_dR0_neut", lambda x : (x.jetEnergyRing(0,0.05))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"), 
     NTupleVariable("energyRing_dR1_neut", lambda x : (x.jetEnergyRing(0.05,0.1))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"), 
     NTupleVariable("energyRing_dR2_neut", lambda x : (x.jetEnergyRing(0.1,0.2))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"), 
     NTupleVariable("energyRing_dR3_neut", lambda x : (x.jetEnergyRing(0.2,0.3))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"), 
     NTupleVariable("energyRing_dR4_neut", lambda x : (x.jetEnergyRing(0.3,0.4))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"),
+    NTupleVariable("energyRing_dR5_neut", lambda x : (x.jetEnergyRing(0.4,10))[3] , float, mcOnly = False, help="energy of jet consituents in the ring of certain dR, neutral energy only"),
 
     NTupleVariable("numDaughters_pt03", lambda x : (x.jetDaughtersNum_pt03()) , int, mcOnly = False, help="multiplicity of jet daughters with pt > 0.3 GeV"),
+    NTupleVariable("rawEnergy", lambda x : (x.rawEnergy()) , float, mcOnly = False, help="raw Energy of jet"),
 ##################### 
  ])
 
