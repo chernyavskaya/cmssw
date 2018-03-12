@@ -4,7 +4,7 @@ config = Configuration()
 config.section_("General")
 #config.General.requestName = 'ggHHbbgg_resonant700'
 #config.General.requestName = 'ZHbbll'
-config.General.requestName = 'V25_energyRings_validation'
+config.General.requestName = 'V25_energyRings_TTbar_newtrigger'
 config.General.workArea = '/afs/cern.ch/work/n/nchernya/CMSSW_8_0_25_log//crab_projects'
 config.General.transferLogs=True
 
@@ -47,12 +47,12 @@ config.JobType.inputFiles = ['heppy_config.py',
 #config.JobType.outputFiles = ['tree.root']
 
 config.section_("Data")
-##config.Data.inputDataset = '/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+config.Data.inputDataset = '/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 #config.Data.inputDataset = '/GluGluToHHTo2B2G_node_SM_13TeV-madgraph/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 #config.Data.inputDataset = '/GluGluToRadionToHHTo2B2G_M-500_narrow_13TeV-madgraph/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 #config.Data.inputDataset = '/GluGluToRadionToHHTo2B2G_M-700_narrow_13TeV-madgraph/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 #config.Data.inputDataset = '/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
-config.Data.inputDataset ='/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
+#config.Data.inputDataset ='/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
 #config.Data.inputDataset = ''
 #config.Data.inputDataset = ''
 #config.Data.inputDataset = ''
@@ -62,8 +62,8 @@ config.Data.inputDataset ='/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgr
 config.Data.inputDBS = 'global'
 #config.Data.splitting = 'FileBased'
 config.Data.splitting = 'EventAwareLumiBased'
-#config.Data.unitsPerJob = 50000
-config.Data.unitsPerJob = 10000   # for HT bin 400-600 ext
+config.Data.unitsPerJob = 50000
+#config.Data.unitsPerJob = 10000   # for HT bin 400-600 ext
 #config.Data.totalUnits = 80000000
 #config.Data.unitsPerJob = 10000
 #config.Data.totalUnits = 500000

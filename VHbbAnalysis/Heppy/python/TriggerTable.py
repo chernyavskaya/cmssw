@@ -103,6 +103,8 @@ triggerTable = {
         "HLT_Mu40_eta2p1_PFJet200_PFJet50_v*",
         "HLT_IsoMu18_v*",
         "HLT_IsoTkMu18_v*",
+        "HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*",
+        "HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*",
     ],
     "ZmmHbbHighLumi" : [
         "HLT_IsoMu24_v*",

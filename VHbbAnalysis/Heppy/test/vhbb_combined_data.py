@@ -13,11 +13,13 @@ from vhbb_combined import *
 sample.json="json.txt"
 sample.files=[
     #"root://xrootd.ba.infn.it//store/data/Run2015D/BTagCSV/MINIAOD/16Dec2015-v1/50000/00AF8EB4-70AB-E511-9271-00266CFAE7AC.root"
-    "root://cms-xrd-global.cern.ch//store/data/Run2016B/SingleMuon/MINIAOD/23Sep2016-v1/70000/3AB8DCD4-7387-E611-B30C-0025904CF766.root"
+#    "root://cms-xrd-global.cern.ch//store/data/Run2016B/SingleMuon/MINIAOD/23Sep2016-v1/70000/3AB8DCD4-7387-E611-B30C-0025904CF766.root"
     #"root://131.169.191.218:1094//store/data/Run2016B/SingleMuon//MINIAOD/PromptReco-v2/000/273/537/00000/6EDA3436-A91F-E611-83EA-02163E014736.root"
+"/eos/cms//store/data/Run2016B/DoubleMuon/MINIAOD/03Feb2017_ver1-v1/110000/02B27BFE-1BEB-E611-8D50-001EC9B20ECB.root"
     ]
 
-TriggerObjectsAna.triggerObjectInputTag = ('selectedPatTrigger','','RECO')
+#TriggerObjectsAna.triggerObjectInputTag = ('selectedPatTrigger','','RECO')
+TriggerObjectsAna.triggerObjectInputTag = ('selectedPatTrigger','','PAT') #for re-miniAOD
 FlagsAna.processName='RECO'
 TrigAna.triggerBits = triggerTableData
 L1TriggerAna.processName = 'RECO'
@@ -29,7 +31,7 @@ L1TriggerAna.processName = 'RECO'
 # and the following runs the process directly 
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( 'Loop', config, nPrint = 1, nEvents = 1000)
+    looper = Looper( 'Loop', config, nPrint = 1, nEvents = 20)
 
     import time
     import cProfile

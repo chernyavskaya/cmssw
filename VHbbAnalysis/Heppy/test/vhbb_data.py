@@ -4,9 +4,10 @@ sample.isMC=False
 sample.isData=True
 sample.files=[
 # "file:00EA1DB2-90AA-E511-AEEE-0025905C2CE6.root"
- "72446D9C-D89C-E611-9060-002590A3C984.root"
+# "72446D9C-D89C-E611-9060-002590A3C984.root"
 #"root://cms-xrd-global.cern.ch//store/data/Run2016B/JetHT/MINIAOD/PromptReco-v2/000/273/150/00000/66051AAF-D819-E611-BD3D-02163E011D55.root"
 #/store/data/Run2015B/SingleMuon/MINIAOD/PromptReco-v1/000/251/162/00000/160C08A3-4227-E511-B829-02163E01259F.root"
+"/eos/cms//store/data/Run2016B/DoubleMuon/MINIAOD/03Feb2017_ver1-v1/110000/02B27BFE-1BEB-E611-8D50-001EC9B20ECB.root"
 ]
 sample.json="json.txt"
 
