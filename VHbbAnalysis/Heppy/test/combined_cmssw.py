@@ -32,11 +32,11 @@ def initialize(**kwargs):
 
     process = cms.Process("EX")
     if lumisToProcess == None:
-        process.source = cms.Source("PoolSource",
+        process.source = cms.Source("PoolSource",noEventSort = cms.untracked.bool(True),duplicateCheckMode = cms.untracked.string('noDuplicateCheck'),
             fileNames = cms.untracked.vstring("file:///scratch/gregor/TTJets_MSDecaysCKM_central_Tune4C_13TeV_MiniAOD.root")
         )
     else:
-        process.source = cms.Source("PoolSource",
+        process.source = cms.Source("PoolSource",noEventSort = cms.untracked.bool(True),duplicateCheckMode = cms.untracked.string('noDuplicateCheck'),
             fileNames = cms.untracked.vstring("file:///scratch/gregor/TTJets_MSDecaysCKM_central_Tune4C_13TeV_MiniAOD.root"),
             lumisToProcess = lumisToProcess
         )
