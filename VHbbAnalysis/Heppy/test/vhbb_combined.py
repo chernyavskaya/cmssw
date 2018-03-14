@@ -168,7 +168,7 @@ preprocessor = CmsswPreprocessor("combined_cmssw.py", options = {"isMC":sample.i
 config.preprocessor=preprocessor
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 50000)
+    looper = Looper( '/eos/cms/store/group/phys_higgs/vbfHbb/LHE_MINIAOD/Heppy/Loop', config, nPrint = 0, nEvents = 50000)
     import time
     import cProfile
     p = cProfile.Profile(time.clock)
