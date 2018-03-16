@@ -165,10 +165,10 @@ for ic in range(len(config.sequence)):
 
 # Run Everything
 preprocessor = CmsswPreprocessor("combined_cmssw.py", options = {"isMC":sample.isMC})
-config.preprocessor=preprocessor
+#config.preprocessor=preprocessor
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( '/eos/cms/store/group/phys_higgs/vbfHbb/LHE_MINIAOD/Heppy/Loop02', config, nPrint = 0, nEvents = 50000)
+    looper = Looper( '/eos/cms/store/group/phys_higgs/vbfHbb/LHE_MINIAOD/Heppy/Loop_drop', config, nPrint = 0, nEvents = 50000)
     import time
     import cProfile
     p = cProfile.Profile(time.clock)

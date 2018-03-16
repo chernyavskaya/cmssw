@@ -45,6 +45,7 @@ def initialize(**kwargs):
     process.OUT = cms.OutputModule("PoolOutputModule",
         fileName = cms.untracked.string('test.root'),
         outputCommands = cms.untracked.vstring(['drop *'])
+     #   outputCommands = cms.untracked.vstring(['drop *_*_*_EX'])
     )
     process.endpath= cms.EndPath(process.OUT)
 
