@@ -2,8 +2,8 @@ from WMCore.Configuration import Configuration
 config = Configuration()
 
 config.section_("General")
-config.General.requestName = 'VHBB_V25_002'
-config.General.workArea = '/scratch/arizzi/crab_sub/crab_projects_V25_002'
+config.General.requestName = 'VHBB_V25_interference'
+config.General.workArea = '/afs/cern.ch/work/n/nchernya/CMSSW_8_0_25_log//crab_projects/'
 config.General.transferLogs=True
 
 config.section_("JobType")
@@ -44,14 +44,14 @@ config.JobType.inputFiles = ['heppy_config.py',
 #config.JobType.outputFiles = ['tree.root']
 
 config.section_("Data")
-config.Data.inputDataset = '/ZH_HToBB_ZToLL_M125_13TeV_amcatnloFXFX_madspin_pythia8/RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/MINIAODSIM'
+config.Data.inputDataset = '/LLJJ_INT_SM_5f_LO_13TeV_madgraph-pythia8_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
 config.Data.inputDBS = 'global'
 #config.Data.splitting = 'FileBased'
 config.Data.splitting = 'EventAwareLumiBased'
 config.Data.unitsPerJob = 50000
 #config.Data.totalUnits = 8000
 config.Data.allowNonValidInputDataset = True # to run on datasets in PRODUCTION
-config.Data.outLFNDirBase = '/store/group/phys_higgs/hbb/ntuples/V25/'
+config.Data.outLFNDirBase = '/store/group/phys_higgs/vbfHbb/V25/'
 config.Data.publication = True
 config.Data.outputDatasetTag = 'VHBB_HEPPY_V25'
 
