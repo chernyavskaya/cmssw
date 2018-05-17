@@ -197,6 +197,7 @@ jetTypeVHbb = NTupleObjectType("jet",  baseObjectTypes = [ jetType ], variables 
 
     NTupleVariable("numDaughters_pt03", lambda x : (x.jetDaughtersNum_pt03()) , int, mcOnly = False, help="multiplicity of jet daughters with pt > 0.3 GeV"),
     NTupleVariable("rawEnergy", lambda x : (x.rawEnergy()) , float, mcOnly = False, help="raw Energy of jet"),
+    NTupleVariable("ptd_breg",   lambda x : (x.jetPtdBreg()), float, mcOnly=False,help="ptD definition, used for bregression"),
 ##################### 
  ])
 

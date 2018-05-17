@@ -256,6 +256,22 @@ class Jet(PhysicsObject):
          if part.pt()>0.3 : mult +=1
        return mult 
 
+    def jetPtdBreg(self):
+       jet = self
+       sum_weight = 0.
+       sum_pt = 0.  
+       ptd=0.    
+       for ii in range(0, jet.numberOfDaughters()) :
+         part = jet.daughter(ii)
+         partPt = part.pt()
+         weight = partPt*partPt                
+         sum_weight += weight                  
+         sum_pt += partPt                      
+       if sum_weight > 0 :
+         ptd = math.sqrt(sum_weight)/sum_pt
+       else: ptd = 0. 
+       return ptd                                     
+
 
 
 
@@ -277,6 +293,7 @@ class Jet(PhysicsObject):
 	 
        jet = self
        jet.mult = 0
+    #   print "Jet_pt,eta,phi and multiplicity : ",jet.pt(),jet.eta(),jet.phi(),jet.numberOfDaughters()
        sum_weight = 0.
        sum_pt = 0.    
        sum_deta = 0.  
@@ -305,7 +322,8 @@ class Jet(PhysicsObject):
 
          deta = part.eta() - jet.eta()
          dphi = deltaPhi(part.phi(), jet.phi())
-         partPt = part.pt()                    
+         partPt = part.pt()
+      #   print "daughter pt : ",partPt                    
          weight = partPt*partPt                
          sum_weight += weight                  
          sum_pt += partPt                      
@@ -324,6 +342,7 @@ class Jet(PhysicsObject):
 
        if sum_weight > 0 :
          jet.ptd = math.sqrt(sum_weight)/sum_pt
+    #     print "ptd = ",jet.ptd, "sum_weight = ",sum_weight, "sum_pt = ",sum_pt
          ave_deta = sum_deta/sum_weight        
          ave_dphi = sum_dphi/sum_weight        
          ave_deta2 = sum_deta2/sum_weight      

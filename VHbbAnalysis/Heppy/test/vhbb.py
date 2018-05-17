@@ -617,8 +617,10 @@ sample = cfg.MCComponent(
 	#	"root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/7C89D7C0-B7D0-E611-AB35-0CC47A4C8EE8.root",
 		# "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/D466A5FE-11CC-E611-AA18-842B2B17E3BA.root",
 		# "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
-		 "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
+#		 "root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/60000/28CA6CC9-FEC2-E611-BF37-008CFA5D2758.root",
 #		 "root://cms-xrd-global.cern.ch//store/mc/RunIISummer16MiniAODv2/ZJJToLLJJ_aTGC_MLL-50_TuneCUETP8M1_13TeV-madgraph-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/00000/6CB5E7AB-454E-E711-8494-0025904C4E28.root",
+#       "root://eoscms.cern.ch//eos/cms/store/mc/RunIISummer16MiniAODv2/GluGluHToGG_M-125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/60000/024E4FA3-8BBC-E611-8E3D-00266CFFBE88.root",
+       "root://eoscms.cern.ch//eos/cms/store/mc/RunIISummer16MiniAODv2/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50000/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root",
     ],
     # files = ["cmsswPreProcessing.root"],
    # name="ZHLL125", isEmbed=False,
@@ -649,7 +651,7 @@ class TestFilter(logging.Filter):
 # and the following runs the process directly 
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 1000)
+    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 2000)
 
     import time
     import cProfile
