@@ -29,7 +29,7 @@ boostana=cfg.Analyzer(
 )
 
 #boostana.GT = "Fall15_25nsV2_DATA" 
-boostana.GT = "Summer16_23Sep2016GV3_DATA" # we do L2L3 for MC and L2L3Res for data. Can therefor use data GT for both
+boostana.GT = "Summer16_07Aug2017GH_V10_DATA" # we do L2L3 for MC and L2L3Res for data. Can therefor use data GT for both
 boostana.jecPath = os.environ['CMSSW_BASE']+"/src/VHbbAnalysis/Heppy/data/jec"
 boostana.isMC = sample.isMC
 boostana.skip_ca15 = False
@@ -168,7 +168,7 @@ preprocessor = CmsswPreprocessor("combined_cmssw.py", options = {"isMC":sample.i
 config.preprocessor=preprocessor
 if __name__ == '__main__':
     from PhysicsTools.HeppyCore.framework.looper import Looper 
-    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 2000)
+    looper = Looper( 'Loop', config, nPrint = 0, nEvents = 100)
     import time
     import cProfile
     p = cProfile.Profile(time.clock)

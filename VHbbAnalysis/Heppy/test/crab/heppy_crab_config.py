@@ -4,7 +4,7 @@ config = Configuration()
 config.section_("General")
 #config.General.requestName = 'ggHHbbgg_resonant700'
 #config.General.requestName = 'ZHbbll'
-config.General.requestName = 'V25_energyRings_TTbar_newtrigger'
+config.General.requestName = 'V25_energyRings_TTbar_JECv10_ptd'
 config.General.workArea = '/afs/cern.ch/work/n/nchernya/CMSSW_8_0_25_log//crab_projects'
 config.General.transferLogs=True
 
@@ -70,7 +70,7 @@ config.Data.unitsPerJob = 50000
 config.Data.allowNonValidInputDataset = True # to run on datasets in PRODUCTION
 config.Data.outLFNDirBase = '/store/group/phys_higgs/vbfHbb/V25/'
 config.Data.publication = False
-config.Data.outputDatasetTag = 'VHBB_HEPPY_V25_energyRings'
+config.Data.outputDatasetTag = 'VHBB_HEPPY_V25_energyRings_JECv10_ptd'
 
 config.section_("Site")
 config.Site.storageSite = "T2_CH_CERN"

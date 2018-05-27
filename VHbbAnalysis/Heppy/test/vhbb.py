@@ -326,8 +326,8 @@ JetAna.jecPath=os.environ['CMSSW_BASE']+"/src/VHbbAnalysis/Heppy/data/jec"
 #JetAna.mcGT="Fall15_25nsV2_MC"
 #JetAna.dataGT = "Fall15_25nsV2_DATA"
 
-JetAna.mcGT="Summer16_23Sep2016V3_MC"
-JetAna.dataGT="Summer16_23Sep2016GV3_DATA"
+JetAna.mcGT="Summer16_07Aug2017_V10_MC"
+JetAna.dataGT="Summer16_07Aug2017GH_V10_DATA"
 JetAna.addJECShifts=True
 JetAna.addJERShifts=True
 
@@ -379,8 +379,9 @@ factorizedJetCorrections = [
         "FlavorPureBottom",
         "TimeRunBCD",
         "TimeRunEF",
-        "TimeRunG",
-        "TimeRunH",
+        "TimeRunGH",
+     #   "TimeRunG",
+     #   "TimeRunH",
         "CorrelationGroupMPFInSitu",
         "CorrelationGroupIntercalibration",
         "CorrelationGroupbJES",
